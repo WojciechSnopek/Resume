@@ -1,0 +1,2 @@
+# Resume
+Wojciech Snopek Resume
