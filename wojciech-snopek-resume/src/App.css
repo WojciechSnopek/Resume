@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css?family=Finger+Paint");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+.holster {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: "Finger Paint", cursive;
+  color: "white";
+  font-size: "3rem";
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.holster {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.container.y {
+  flex-flow: column nowrap;
+}
+
+.y.mandatory-scroll-snapping {
+  scroll-snap-type: y mandatory;
+}
+
+.container > section {
+  text-align: center;
+  scroll-snap-align: center;
+  flex: none;
+}
+
+.y.container > section {
+  width: 100vw;
+  height: 100%;
+}
+
+.container > section:nth-child(even) {
+  background-color: #87ea87;
+}
+
+.container > section:nth-child(odd) {
+  background-color: #87ccea;
 }
